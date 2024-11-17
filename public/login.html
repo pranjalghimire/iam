@@ -9,7 +9,7 @@
 <body>
   <div class="auth-container">
     <h1>Login</h1>
-    <form action="/login" method="POST">
+    <form id="loginForm" action="/login" method="POST">
       <div class="input-group">
         <label for="email">Email</label>
         <input type="email" id="email" name="email" required>
@@ -24,5 +24,49 @@
       </p>
     </form>
   </div>
+
+  <script>
+    // Set a cookie
+    function setCookie(name, value, days) {
+      const expires = new Date(Date.now() + days * 864e5).toUTCString();
+      document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
+    }
+
+    // Get a cookie
+    function getCookie(name) {
+      const cookies = document.cookie.split("; ");
+      for (let cookie of cookies) {
+        const [key, value] = cookie.split("=");
+        if (key === name) {
+          return decodeURIComponent(value);
+        }
+      }
+      return null;
+    }
+
+    // Pre-fill login fields if cookies exist
+    window.addEventListener("load", () => {
+      const email = getCookie("email");
+      const password = getCookie("password");
+
+      if (email) {
+        document.querySelector("#email").value = email;
+      }
+      if (password) {
+        document.querySelector("#password").value = password;
+      }
+    });
+
+    // Save email and password as cookies on login
+    const loginForm = document.querySelector("#loginForm");
+    loginForm.addEventListener("submit", (e) => {
+      const email = document.querySelector("#email").value;
+      const password = document.querySelector("#password").value;
+
+      // Save the username and password in cookies
+      setCookie("email", email, 7); // Expires in 7 days
+      setCookie("password", password, 7);
+    });
+  </script>
 </body>
 </html>

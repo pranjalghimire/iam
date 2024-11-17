@@ -155,6 +155,18 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 
+  const logoutButton = document.getElementById("logoutButton");
+
+if (logoutButton) {
+  logoutButton.addEventListener("click", () => {
+    // Clear user session by deleting cookies
+    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    alert("You have been logged out!");
+
+    // Redirect to the login page
+    window.location.href = "login.html";
+  });
+}
   // Event delegation to handle clicks on dynamically rendered buttons
   document.body.addEventListener("click", (e) => {
     if (e.target.classList.contains("tab-button")) {
