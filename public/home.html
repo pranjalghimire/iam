@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>First Page - Completed</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <title>Dynamic Home</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,19 +19,16 @@
       <a href="#">ABOUT</a>
     </nav>
     <div class="profile-header">
-      <img src="profile.jpg" alt="Profile Picture" class="profile-picture">
+      <img src="https://via.placeholder.com/120" alt="Profile Picture" class="profile-picture">
       <div class="header-content">
-        <h2 class="fancy-text">i am</h2>
+        <h2 class="fancy-text">I am</h2>
         <h1>Rajkumari Rupkatha</h1>
       </div>
     </div>
 
-
-    <!-- Add this inside the <header> tag, near the bottom -->
-      <div class="logout-container">
-        <button id="logoutButton" class="btn logout-btn">Logout</button>
-      </div>
-
+    <div class="logout-container">
+      <button id="logoutButton" class="btn logout-btn">Logout</button>
+    </div>
   </header>
 
   <!-- Main Section -->
@@ -46,66 +42,37 @@
         <button class="tab-button" data-tab="freelance">Freelance</button>
       </div>
 
-      <!-- Tab Content -->
+      <!-- Tab Content Sections -->
       <div id="overview" class="tab-content active">
-        <div class="video-section">
-          <div class="video-container"></div>
-          <div class="bullet-points-section">
-            <h2 class="fancy-text">i am...</h2>
-            <div class="bullet-row">
-              <div class="bullet-point">
-                <h3>B.S @ Texas Tech University</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </div>
-              <div class="bullet-point">
-                <h3>Director @ MLH TTU</h3>
-                <p>Proin et urna eget lorem convallis posuere.</p>
-              </div>
-              <div class="bullet-point">
-                <h3>Creative Thinker</h3>
-                <p>Mauris id libero tincidunt, volutpat lorem vel, volutpat velit.</p>
-              </div>
-            </div>
-            <div class="bullet-row">
-              <div class="bullet-point">
-                <h3>Problem Solver</h3>
-                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.</p>
-              </div>
-              <div class="bullet-point">
-                <h3>Future Leader</h3>
-                <p>Etiam nec ligula non nunc vulputate cursus non id sapien.</p>
-              </div>
-              <div class="bullet-point">
-                <h3>Passionate Innovator</h3>
-                <p>Curabitur ut lorem id sem condimentum hendrerit.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3 class="section-heading">Newest Channel Name Videos!</h3>
+        <h2>Overview</h2>
         <div class="videos-section">
-          <div class="video-thumbnail"></div>
-          <div class="video-thumbnail"></div>
-          <div class="video-thumbnail"></div>
-          <div class="video-thumbnail"></div>
+          ${generateThumbnails(4)}
         </div>
       </div>
 
-      <!-- Tab Content Sections -->
-      <div id="overview" class="tab-content active">
-        <p>This is the Overview content. It is displayed by default.</p>
-      </div>
       <div id="academia" class="tab-content">
-        <p>This is the Academia content.</p>
+        <h2>Academia</h2>
+        <div class="videos-section">
+          ${generateThumbnails(8)}
+        </div>
       </div>
+
       <div id="corporate" class="tab-content">
-        <p>This is the Corporate content.</p>
+        <h2>Corporate</h2>
+        <div class="videos-section">
+          ${generateThumbnails(6)}
+        </div>
       </div>
+
       <div id="freelance" class="tab-content">
-        <p>This is the Freelance content.</p>
+        <h2>Freelance</h2>
+        <div class="videos-section">
+          ${generateThumbnails(10)}
+        </div>
       </div>
     </div>
   </main>
+
   <script src="script.js"></script>
 </body>
 </html>

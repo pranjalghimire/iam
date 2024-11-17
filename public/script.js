@@ -55,9 +55,10 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   };
 
+  // Render content for tabs
   function renderContent(tabName) {
     if (tabName === "overview") {
-      // Render the original default content for Overview
+      // Render the default content for Overview
       bodyContainer.innerHTML = `
         <div class="tab-container">
           <button class="tab-button active" data-tab="overview">Overview</button>
@@ -155,31 +156,85 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 
+  // Logout button logic
   const logoutButton = document.getElementById("logoutButton");
+  if (logoutButton) {
+    logoutButton.addEventListener("click", () => {
+      document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      alert("You have been logged out!");
+      window.location.href = "login.html";
+    });
+  }
 
-if (logoutButton) {
-  logoutButton.addEventListener("click", () => {
-    // Clear user session by deleting cookies
-    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    alert("You have been logged out!");
+  // First-time setup logic
+  if (window.location.pathname.includes("setup.html")) {
+    const setupForm = document.getElementById("setupForm");
 
-    // Redirect to the login page
-    window.location.href = "login.html";
+    setupForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const profilePicture = document.getElementById("profilePicture").files[0];
+      const bullets = Array.from(document.querySelectorAll(".bullet-input")).map((input) => input.value);
+      const mainVideo = document.getElementById("mainVideo").files[0];
+
+      // Save user data
+      const userData = {
+        name,
+        profilePicture: URL.createObjectURL(profilePicture), // Temporary display
+        mainVideo: URL.createObjectURL(mainVideo),
+        bullets,
+      };
+
+      localStorage.setItem("userData", JSON.stringify(userData));
+      window.location.href = "home.html";
+    });
+  }
+
+  // Render the default content for "Overview" when the page loads
+  renderContent("overview");
+  document.addEventListener("DOMContentLoaded", () => {
+    const tabs = document.querySelectorAll(".tab-button");
+    const tabContents = document.querySelectorAll(".tab-content");
+  
+    // Function to generate thumbnails dynamically
+    function generateThumbnails(count) {
+      let thumbnailsHTML = "";
+      for (let i = 0; i < count; i++) {
+        const randomImage = `https://picsum.photos/200/150?random=${Math.floor(
+          Math.random() * 1000
+        )}`;
+        thumbnailsHTML += `
+          <div class="video-thumbnail">
+            <img src="${randomImage}" alt="Video Thumbnail">
+            <p>Video ${i + 1}</p>
+          </div>
+        `;
+      }
+      return thumbnailsHTML;
+    }
+  
+    // Tab navigation logic
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        tabs.forEach((t) => t.classList.remove("active"));
+        tabContents.forEach((content) => content.classList.remove("active"));
+  
+        tab.classList.add("active");
+        const tabName = tab.dataset.tab;
+        document.getElementById(tabName).classList.add("active");
+      });
+    });
   });
-}
-  // Event delegation to handle clicks on dynamically rendered buttons
+  // Tab switching logic
   document.body.addEventListener("click", (e) => {
     if (e.target.classList.contains("tab-button")) {
       const tabName = e.target.getAttribute("data-tab");
       renderContent(tabName);
 
-      // Highlight active tab
       const allTabs = document.querySelectorAll(".tab-button");
       allTabs.forEach((tab) => tab.classList.remove("active"));
       e.target.classList.add("active");
     }
   });
-
-  // Render the default content for "Overview" when the page loads
-  renderContent("overview");
 });

@@ -4,16 +4,15 @@ html, body {
   height: 100%; /* Ensures full height */
   display: flex;
   flex-direction: column; /* Stacks header, main, and footer */
-  background-color: #fefaf6;
+  background-color: #f0f4f8; /* Light modern gray-blue */
   font-family: Arial, sans-serif;
 }
 
 /* Header styling */
 header {
-  background-color: #5e3149;
+  background-color: #344955; /* Deep modern teal-gray */
   color: white;
   padding: 20px;
-  position: relative;
 }
 
 nav {
@@ -24,9 +23,13 @@ nav {
 }
 
 nav a {
-  color: white;
+  color: #ffffff;
   text-decoration: none;
   font-size: 1rem;
+}
+
+nav a:hover {
+  color: #4a6572; /* Muted teal-gray for hover */
 }
 
 .profile-header {
@@ -52,11 +55,13 @@ nav a {
   margin: 0;
   font-size: 2.5rem;
   font-family: 'Playfair Display', serif; /* Beautiful font */
+  color: #dfe6e9; /* Light modern white */
 }
 
 .header-content h1 {
   margin: 0;
   font-size: 1.8rem;
+  color: #ffffff;
 }
 
 /* Main content styles */
@@ -65,6 +70,7 @@ main {
   padding: 20px;
   display: flex;
   flex-direction: column;
+  background-color: #eaf0f6; /* Subtle light blue-gray */
 }
 
 /* Video section layout */
@@ -76,7 +82,7 @@ main {
 
 .video-container {
   width: 35%; /* Further reduced width */
-  background-color: #b68e99;
+  background-color: #4a6572; /* Muted teal-gray */
   height: 300px;
 }
 
@@ -88,7 +94,7 @@ main {
   font-family: 'Playfair Display', serif; /* Beautiful font */
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #5e3149;
+  color: #344955; /* Matches header color */
 }
 
 .bullet-row {
@@ -97,26 +103,22 @@ main {
   margin-bottom: 20px;
 }
 
-.bullet-point {
-  width: 30%;
-}
-
 .bullet-point h3 {
-  color: #5e3149;
+  color: #232f34; /* Deep dark gray for headers */
   font-size: 1.3rem;
   margin-bottom: 10px;
 }
 
 .bullet-point p {
   font-size: 1rem;
-  color: #333;
+  color: #4a6572; /* Muted teal-gray */
   line-height: 1.5;
 }
 
 /* Footer section */
 .section-heading {
   text-align: center;
-  color: #d36b7f;
+  color: #4a90e2; /* Bright modern blue */
   margin-bottom: 20px;
 }
 
@@ -124,17 +126,20 @@ main {
   display: flex;
   justify-content: space-evenly;
   padding: 20px 0;
-  background-color: #fefaf6;
+  background-color: #ecf0f3; /* Soft white-gray */
   margin-top: auto; /* Pushes footer to the bottom */
 }
 
 .video-thumbnail {
   width: 140px;
   height: 100px;
-  background-color: #b68e99;
+  background-color: #4a90e2; /* Bright modern blue */
   margin: 0 10px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 
 /* Tab Navigation */
 .tab-container {
@@ -142,7 +147,7 @@ main {
   justify-content: flex-end; /* Align buttons to the middle-right */
   padding: 10px 20px; /* Add padding around the container */
   margin-bottom: 20px; /* Space below the buttons */
-  background-color: #5e3149; /* Keep the background consistent */
+  background-color: #344955; /* Matches header background */
 }
 
 .tab-button {
@@ -158,22 +163,15 @@ main {
 }
 
 .tab-button.active {
-  border-bottom: 4px solid #d36b7f; /* Slightly thicker underline for active button */
+  border-bottom: 4px solid #4a90e2; /* Bright blue underline for active button */
 }
 
 .tab-button:hover {
-  color: #d36b7f;
-  background-color: rgba(211, 107, 127, 0.2); /* Subtle hover effect */
+  color: #ecf0f3; /* Soft white-gray hover */
+  background-color: rgba(0, 0, 0, 0.1); /* Subtle background hover */
 }
 
-
-.tab-container {
-  display: flex;
-  justify-content: flex-start; /* Tabs stay visible at the top */
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
+/* Tab content */
 .tab-content {
   display: none; /* Hide all content sections by default */
 }
@@ -182,63 +180,82 @@ main {
   display: block; /* Show the active content section */
 }
 
-.tab-button.active {
-  background-color: #5e3149; /* Highlight active tab */
-  color: white;
-}
-
-
-
-.section {
-  margin: 20px 0;
-}
-
-.section h3 {
-  color: #5e3149;
-  margin-bottom: 10px;
-}
-
-.section h4 {
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.videos-section {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns */
-  gap: 15px;
-  margin-bottom: 20px;
-}
-
-.video-thumbnail {
-  background-color: #b68e99;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
-  color: white;
-  border-radius: 5px;
-}
-
-/* Logout button styling */
-.logout-container {
-  position: absolute;
-  bottom: 10px; /* Position at the bottom of the header */
-  right: 20px; /* Align to the right edge of the header */
-}
-
 .logout-btn {
-  background-color: #d9534f;
+  background-color: #d9534f; /* Vibrant red for logout button */
   color: white;
   font-size: 1rem;
   padding: 8px 12px;
   border: none;
   cursor: pointer;
   border-radius: 5px;
-  text-transform: uppercase;
 }
 
 .logout-btn:hover {
-  background-color: #c9302c;
+  background-color: #c62828; /* Darker red on hover */
+}
+
+
+/* Add glowing effect to header links */
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  text-shadow: 0 0 5px #4a90e2, 0 0 10px #4a90e2, 0 0 15px #4a90e2;
+}
+
+nav a:hover {
+  color: #4a90e2;
+  text-shadow: 0 0 10px #4a90e2, 0 0 20px #4a90e2, 0 0 30px #4a90e2;
+}
+
+/* Add glowing effect to tab buttons */
+.tab-button {
+  background: none;
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  margin: 0 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 5px;
+  text-shadow: 0 0 5px #4a90e2, 0 0 10px #4a90e2, 0 0 15px #4a90e2;
+  transition: text-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.tab-button.active {
+  border-bottom: 4px solid #4a90e2;
+  color: #4a90e2;
+  text-shadow: 0 0 10px #4a90e2, 0 0 20px #4a90e2, 0 0 30px #4a90e2;
+}
+
+.tab-button:hover {
+  color: #4a90e2;
+  text-shadow: 0 0 15px #4a90e2, 0 0 25px #4a90e2, 0 0 35px #4a90e2;
+}
+
+
+.videos-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Adjust for different layouts */
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.video-thumbnail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.video-thumbnail img {
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.video-thumbnail p {
+  margin-top: 5px;
+  font-size: 14px;
 }

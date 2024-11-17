@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Setup Profile</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Setup Your Profile</h1>
+  <form action="/setup" method="POST" enctype="multipart/form-data">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    
+    <div>
+      <label for="profilePicture">Profile Picture:</label>
+      <input type="file" id="profilePicture" name="profilePicture" accept="image/*" required>
+    </div>
+    
+    <div>
+      <label for="mainVideo">Main Video:</label>
+      <input type="file" id="mainVideo" name="mainVideo" accept="video/*" required>
+    </div>
+  
+    <div id="bullets">
+      <h3>Bullet Points</h3>
+      <div>
+        <input type="text" name="bulletTitles[]" placeholder="Title 1" required>
+        <textarea name="bulletDescriptions[]" placeholder="Description 1" required></textarea>
+      </div>
+      <div>
+        <input type="text" name="bulletTitles[]" placeholder="Title 2" required>
+        <textarea name="bulletDescriptions[]" placeholder="Description 2" required></textarea>
+      </div>
+      <div>
+        <input type="text" name="bulletTitles[]" placeholder="Title 3" required>
+        <textarea name="bulletDescriptions[]" placeholder="Description 3" required></textarea>
+      </div>
+      <!-- Add more as needed -->
+    </div>
+  
+    <button type="submit">Submit</button>
+  </form>
+  
+  <script>
+    document.getElementById("addBullet").addEventListener("click", () => {
+      const container = document.getElementById("bulletPoints");
+      const newBullet = document.createElement("div");
+      newBullet.classList.add("bullet");
+      newBullet.innerHTML = `
+        <label>Bullet Title:</label>
+        <input type="text" name="bulletTitles[]" required>
+        <label>Description:</label>
+        <textarea name="bulletDescriptions[]" required></textarea>
+      `;
+      container.appendChild(newBullet);
+    });
+  </script>
+</body>
+</html>
