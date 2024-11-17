@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>First Page - Completed</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <nav>
+      <a href="#">HOME</a>
+      <a href="#">VIDEOS</a>
+      <a href="#">PLAYLISTS</a>
+      <a href="#">COMMUNITY</a>
+      <a href="#">STORE</a>
+      <a href="#">CHANNELS</a>
+      <a href="#">ABOUT</a>
+    </nav>
+    <div class="profile-header">
+      <img src="profile.jpg" alt="Profile Picture" class="profile-picture">
+      <div class="header-content">
+        <h2 class="fancy-text">i am</h2>
+        <h1>Rajkumari Rupkatha</h1>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Section -->
+  <main>
+    <div class="body">
+      <!-- Tab Navigation -->
+      <div class="tab-container">
+        <button class="tab-button active" data-tab="overview">Overview</button>
+        <button class="tab-button" data-tab="academia">Academia</button>
+        <button class="tab-button" data-tab="corporate">Corporate</button>
+        <button class="tab-button" data-tab="freelance">Freelance</button>
+      </div>
+
+      <!-- Tab Content -->
+      <div id="overview" class="tab-content active">
+        <div class="video-section">
+          <div class="video-container"></div>
+          <div class="bullet-points-section">
+            <h2 class="fancy-text">i am...</h2>
+            <div class="bullet-row">
+              <div class="bullet-point">
+                <h3>B.S @ Texas Tech University</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+              <div class="bullet-point">
+                <h3>Director @ MLH TTU</h3>
+                <p>Proin et urna eget lorem convallis posuere.</p>
+              </div>
+              <div class="bullet-point">
+                <h3>Creative Thinker</h3>
+                <p>Mauris id libero tincidunt, volutpat lorem vel, volutpat velit.</p>
+              </div>
+            </div>
+            <div class="bullet-row">
+              <div class="bullet-point">
+                <h3>Problem Solver</h3>
+                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.</p>
+              </div>
+              <div class="bullet-point">
+                <h3>Future Leader</h3>
+                <p>Etiam nec ligula non nunc vulputate cursus non id sapien.</p>
+              </div>
+              <div class="bullet-point">
+                <h3>Passionate Innovator</h3>
+                <p>Curabitur ut lorem id sem condimentum hendrerit.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h3 class="section-heading">Newest Channel Name Videos!</h3>
+        <div class="videos-section">
+          <div class="video-thumbnail"></div>
+          <div class="video-thumbnail"></div>
+          <div class="video-thumbnail"></div>
+          <div class="video-thumbnail"></div>
+        </div>
+      </div>
+
+      <!-- Tab Content Sections -->
+      <div id="overview" class="tab-content active">
+        <p>This is the Overview content. It is displayed by default.</p>
+      </div>
+      <div id="academia" class="tab-content">
+        <p>This is the Academia content.</p>
+      </div>
+      <div id="corporate" class="tab-content">
+        <p>This is the Corporate content.</p>
+      </div>
+      <div id="freelance" class="tab-content">
+        <p>This is the Freelance content.</p>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

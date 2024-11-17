@@ -1,0 +1,222 @@
+/* General styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensures full height */
+  display: flex;
+  flex-direction: column; /* Stacks header, main, and footer */
+  background-color: #fefaf6;
+  font-family: Arial, sans-serif;
+}
+
+/* Header styling */
+header {
+  background-color: #5e3149;
+  color: white;
+  padding: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around; /* Balanced spacing */
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Profile picture stays left */
+  margin-top: 20px;
+}
+
+.profile-picture {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.header-content {
+  text-align: center;
+  flex-grow: 1; /* Center "i am" and name */
+}
+
+.header-content h2 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-family: 'Playfair Display', serif; /* Beautiful font */
+}
+
+.header-content h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+/* Main content styles */
+main {
+  flex: 1; /* Allows main content to expand and fill space */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Video section layout */
+.video-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.video-container {
+  width: 35%; /* Further reduced width */
+  background-color: #b68e99;
+  height: 300px;
+}
+
+.bullet-points-section {
+  width: 60%;
+}
+
+.bullet-points-section h2 {
+  font-family: 'Playfair Display', serif; /* Beautiful font */
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #5e3149;
+}
+
+.bullet-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.bullet-point {
+  width: 30%;
+}
+
+.bullet-point h3 {
+  color: #5e3149;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.bullet-point p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Footer section */
+.section-heading {
+  text-align: center;
+  color: #d36b7f;
+  margin-bottom: 20px;
+}
+
+.videos-section {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px 0;
+  background-color: #fefaf6;
+  margin-top: auto; /* Pushes footer to the bottom */
+}
+
+.video-thumbnail {
+  width: 140px;
+  height: 100px;
+  background-color: #b68e99;
+  margin: 0 10px;
+}
+
+
+/* Tab Navigation */
+.tab-container {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the middle-right */
+  padding: 10px 20px; /* Add padding around the container */
+  margin-bottom: 20px; /* Space below the buttons */
+  background-color: #5e3149; /* Keep the background consistent */
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  color: white;
+  padding: 12px 25px; /* Increase button padding for size */
+  margin: 0 15px; /* Add spacing between buttons */
+  font-size: 1.2rem; /* Slightly larger font size */
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 5px; /* Add rounded corners */
+}
+
+.tab-button.active {
+  border-bottom: 4px solid #d36b7f; /* Slightly thicker underline for active button */
+}
+
+.tab-button:hover {
+  color: #d36b7f;
+  background-color: rgba(211, 107, 127, 0.2); /* Subtle hover effect */
+}
+
+
+.tab-container {
+  display: flex;
+  justify-content: flex-start; /* Tabs stay visible at the top */
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab-content {
+  display: none; /* Hide all content sections by default */
+}
+
+.tab-content.active {
+  display: block; /* Show the active content section */
+}
+
+.tab-button.active {
+  background-color: #5e3149; /* Highlight active tab */
+  color: white;
+}
+
+
+
+.section {
+  margin: 20px 0;
+}
+
+.section h3 {
+  color: #5e3149;
+  margin-bottom: 10px;
+}
+
+.section h4 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.videos-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.video-thumbnail {
+  background-color: #b68e99;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: white;
+  border-radius: 5px;
+}
