@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="login_signup.css">
+</head>
+<body>
+  <div class="auth-container">
+    <h1>Sign Up</h1>
+    <form id="signupForm" action="/signup" method="POST">
+      <div class="input-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <button type="submit" class="btn">Sign Up</button>
+      <p class="auth-link">
+        Already have an account? <a href="#" id="loginButton">Login</a>
+      </p>
+    </form>
+  </div>
+
+  <script>
+    const loginButton = document.getElementById("loginButton");
+    loginButton.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      // Automatically submit the signup form to log in
+      const form = document.getElementById("signupForm");
+      form.action = "/login";
+      form.method = "POST";
+      form.submit();
+    });
+  </script>
+</body>
+</html>
